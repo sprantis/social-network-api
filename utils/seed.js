@@ -1,5 +1,13 @@
 const connection = require('../config/connection');
-const { User, Post, Tags, Application, Course, Student } = require('../models');
+const { 
+    // User, 
+    // Post, 
+    // Tags, 
+    Tag, 
+    Application, 
+    Course, 
+    Student 
+} = require('../models');
 const { getRandomName, getRandomColor, getRandomPost, genRandomIndex, getRandomApplications, getRandomAssignments } = require('./data');
 
 connection.on('error', (err) => err);
@@ -15,11 +23,12 @@ connection.once('open', async () => {
   await Application.deleteMany({});
   await User.deleteMany({});
   await Post.deleteMany({});
-  await Tags.deleteMany({});
+//   await Tags.deleteMany({});
   // Drop existing courses
   await Course.deleteMany({});
   // Drop existing students
   await Student.deleteMany({});
+  await Tag.deleteMany({});
 
   // Empty arrays for randomly generated users, posts, and tags
   const users = [];
@@ -78,7 +87,7 @@ connection.once('open', async () => {
   await User.collection.insertMany(users);
 
     // Wait for the tags to be inserted into the database
-    await Tags.collection.insertMany(tags);
+    await Tag.collection.insertMany(tags);
 
     // For each of the tags that exist, make a random post of length 50
     tags.forEach(() => makePost(getRandomPost(50)));
