@@ -56,14 +56,14 @@ connection.once('open', async () => {
 //   };
 
     // Create 20 random tags and push them into the tags array
-    for (let i = 0; i < 20; i++) {
-        const tagname = getRandomColor();
+    // for (let i = 0; i < 20; i++) {
+    //     const tagname = getRandomColor();
     
-        tags.push({
-          tagname,
-          color: tagname,
-        });
-    }
+    //     tags.push({
+    //       tagname,
+    //       color: tagname,
+    //     });
+    // }
 
   // Loop 20 times -- add students to the students array
   for (let i = 0; i < 20; i++) {
