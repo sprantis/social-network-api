@@ -3,7 +3,7 @@ const {
     // User, 
     // Post, 
     // Tags, 
-    Tag, 
+    // Tag, 
     Application, 
     Course, 
     Student 
@@ -21,39 +21,39 @@ connection.once('open', async () => {
 
   // Delete the entries in the collection
   await Application.deleteMany({});
-  await User.deleteMany({});
-  await Post.deleteMany({});
+//   await User.deleteMany({});
+//   await Post.deleteMany({});
 //   await Tags.deleteMany({});
   // Drop existing courses
   await Course.deleteMany({});
   // Drop existing students
   await Student.deleteMany({});
-  await Tag.deleteMany({});
+//   await Tag.deleteMany({});
 
   // Empty arrays for randomly generated users, posts, and tags
-  const users = [];
-  const tags = [];
-  const posts = [];
+//   const users = [];
+//   const tags = [];
+//   const posts = [];
   const applications = getRandomApplications(10);
   const students = [];
 
-  for (let i = 0; i < 10; i++) {
-    const name = getRandomName();
-    const newUser = {
-      first: name.split(' ')[0],
-      last: name.split(' ')[1],
-      age: Math.floor(Math.random() * 99 + 1),
-    };
-    users.push(newUser);
-  }
+//   for (let i = 0; i < 10; i++) {
+//     const name = getRandomName();
+//     const newUser = {
+//       first: name.split(' ')[0],
+//       last: name.split(' ')[1],
+//       age: Math.floor(Math.random() * 99 + 1),
+//     };
+//     users.push(newUser);
+//   }
   // Function to make a post object and push it into the posts array
-  const makePost = (text) => {
-    posts.push({
-        published: Math.random() < 0.5,
-        text,
-        tags: [tags[genRandomIndex(tags)]._id],
-    });
-  };
+//   const makePost = (text) => {
+//     posts.push({
+//         published: Math.random() < 0.5,
+//         text,
+//         tags: [tags[genRandomIndex(tags)]._id],
+//     });
+//   };
 
     // Create 20 random tags and push them into the tags array
     for (let i = 0; i < 20; i++) {
@@ -84,16 +84,16 @@ connection.once('open', async () => {
   }
 
   // Wait for the users to be inserted into the database
-  await User.collection.insertMany(users);
+//   await User.collection.insertMany(users);
 
     // Wait for the tags to be inserted into the database
-    await Tag.collection.insertMany(tags);
+    // await Tags.collection.insertMany(tags);
 
     // For each of the tags that exist, make a random post of length 50
-    tags.forEach(() => makePost(getRandomPost(50)));
+    // tags.forEach(() => makePost(getRandomPost(50)));
   
     // Wait for the posts array to be inserted into the database
-    await Post.collection.insertMany(posts);
+    // await Post.collection.insertMany(posts);
 
     await Application.collection.insertMany(applications);
 
@@ -108,9 +108,9 @@ connection.once('open', async () => {
     });
 
       // loop through the saved applications, for each application we need to generate a application response and insert the application responses
-  console.table(tags);
-  console.table(posts, ['published', 'tags', '_id']);
-  console.table(users);
+//   console.table(tags);
+//   console.table(posts, ['published', 'tags', '_id']);
+//   console.table(users);
   console.table(applications);
   console.table(students);
   console.timeEnd('seeding complete 🌱');
