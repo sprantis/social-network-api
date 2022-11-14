@@ -1,4 +1,4 @@
-const { Schema, Types, model } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
 const tagSchema = new Schema(
   {
@@ -24,7 +24,5 @@ const tagSchema = new Schema(
   }
 );
 
-// Initialize our Application model
-const Tag = model('tag', tagSchema);
 
-module.exports = Tag;
+module.exports = tagSchema;
