@@ -5,7 +5,7 @@
 // const Post = require('./Post');
 // const User = require('./User');
 // const Tag = require('./Tag');
-// const Application = require('./Application');
+const Application = require('./Application');
 const Student = require('./Student');
 const Course = require('./Course');
 
@@ -17,7 +17,7 @@ module.exports = {
     // Tags, 
     // Post, 
     // User, 
-    // Application, 
+    Application, 
     // Tag, 
     Student, 
     Course };
