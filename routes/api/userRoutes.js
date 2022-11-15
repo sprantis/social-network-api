@@ -27,6 +27,4 @@ router.route('/:userId/friends/:friendId')
     .post(addFriend)
     .delete(deleteFriend)
 
-// BONUS: cascade stule delete in Mongoose: https://stackoverflow.com/questions/14348516/cascade-style-delete-in-mongoose
-
 module.exports = router;
