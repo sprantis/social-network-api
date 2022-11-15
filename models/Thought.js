@@ -23,7 +23,7 @@ const thoughtSchema = new Schema(
         type: Date,
         // reference to https://stackoverflow.com/questions/41033839/make-mongoose-string-schema-type-default-value-as-blank-and-make-the-field-optio
         default: Date.now,
-        get: timestamp => dayjs(timestamp).format('MM/DD/YYY')
+        get: timestamp => dayjs(timestamp).format('MM/DD/YYYY')
     },
     username: {
         type: String,

@@ -1,6 +1,6 @@
 // Referencing code from Module 18 Activities
 
-const { Schema } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 const dayjs = require("dayjs")
 
 // Schema to create Reaction model
@@ -27,14 +27,14 @@ const reactionSchema = new Schema(
         type: Date,
         // reference to https://stackoverflow.com/questions/41033839/make-mongoose-string-schema-type-default-value-as-blank-and-make-the-field-optio
         default: Date.now,
-        get: timestamp => dayjs(timestamp).format('MM/DD/YYY')
+        get: timestamp => dayjs(timestamp).format('MM/DD/YYYY')
     },
   },
   {
     // Mongoose supports two Schema options to transform Objects after querying MongoDb: toJSON and toObject.
-    // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
+    // Here we are indicating that we want getters to be included with our response, overriding the default behavior
     toJSON: {
-      virtuals: true,
+      getters: true
     },
     id: false,
   }
