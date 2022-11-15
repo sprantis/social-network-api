@@ -18,7 +18,7 @@ I built an API for a social network web application where users can share their 
 Install Node.js before using this application.
 
 ## Usage Information
-[Click here for a demo video.](https://google.com)
+[Click here for a demo video.](https://drive.google.com/file/d/1iwFZPFSx0fTk0q1f78BIOgyH5Dr8CdVr/view)
 
 ![Social Network API Screenshot](./public/assets/images/social-network-api-screenshot.png)
 

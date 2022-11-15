@@ -10,11 +10,13 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // Get a single user
-  getSingleUser(req, res) {
-    User.findOne({ _id: req.params.userId })
-        .populate('thoughts')
-        .populate('friends')
-        .select('-__v')
+  async getSingleUser(req, res) {
+    await User.findOne({ _id: req.params.userId })
+        // populate function not working for getSingleUser() for some reason, but works fine when populating reactions within getSingleThought() *** See thoughtController.js, line 15 ***
+        // .populate([
+        //     { path: 'thoughts', select: '-__v'},
+        //     { path: 'friends', select: '-__v'}
+        // ])
         .then((user) =>
             !user
             ? res.status(404).json({ message: 'No user with that ID' })
