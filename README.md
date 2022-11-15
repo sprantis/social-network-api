@@ -12,12 +12,15 @@
 * [Questions](#questions)
 
 ## Description
+I built an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. I used Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
 ## Installation Instructions
 Install Node.js before using this application.
 
 ## Usage Information
-Demo video: 
+[Click here for a demo video.](https://google.com)
+
+![Social Network API Screenshot](./public/assets/images/social-network-api-screenshot.png)
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
