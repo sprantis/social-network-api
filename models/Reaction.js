@@ -1,7 +1,6 @@
 // Referencing code from Module 18 Activities
 
-const { Schema, model, Types } = require('mongoose');
-const reactionSchema = require('./Reaction')
+const { Schema } = require('mongoose');
 const dayjs = require("dayjs")
 
 // Schema to create Reaction model
@@ -41,9 +40,4 @@ const reactionSchema = new Schema(
   }
 );
 
-// Create model using mongoose.model()  
-// Using mongoose.model() to compile a model based on the schema 'userSchema'
-// Initialize our User model
-const Reaction = model('reactuib', reactionSchema);
-
-module.exports = Reaction;
+module.exports = reactionSchema;
