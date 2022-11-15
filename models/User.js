@@ -26,7 +26,7 @@ const userSchema = new Schema(
     thoughts: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Thoughts',
+            ref: 'Thought',
         }
     ],
     friends: [
@@ -57,6 +57,6 @@ userSchema
 // Create model using mongoose.model()  
 // Using mongoose.model() to compile a model based on the schema 'userSchema'
 // Initialize our User model
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;

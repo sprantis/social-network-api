@@ -52,6 +52,6 @@ thoughtSchema
 // Create model using mongoose.model()  
 // Using mongoose.model() to compile a model based on the schema 'userSchema'
 // Initialize our User model
-const Thought = model('thought', thoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;
