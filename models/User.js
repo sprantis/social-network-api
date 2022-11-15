@@ -40,8 +40,7 @@ const userSchema = new Schema(
     // Mongoose supports two Schema options to transform Objects after querying MongoDb: toJSON and toObject.
     // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
     toJSON: {
-      virtuals: true,
-      getters: true
+      virtuals: true
     },
     id: false,
   }
@@ -52,12 +51,12 @@ userSchema
   .virtual('friendCount')
   // Getter
   .get(function () {
-    return `${this.friends.length}`;
+    return this.friends.length;
   });
 
 // Create model using mongoose.model()  
 // Using mongoose.model() to compile a model based on the schema 'userSchema'
 // Initialize our User model
-const User = model('User', userSchema);
+const User = model('user', userSchema);
 
 module.exports = User;
